@@ -146,6 +146,9 @@
     <EmbeddedResource Include="hlm_login.resx">
       <DependentUpon>hlm_login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="hlm_register.dje-NE.resx">
+      <DependentUpon>hlm_register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="hlm_register.resx">
       <DependentUpon>hlm_register.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +160,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -171,6 +175,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regis-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hlm_regis-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hlm_regis.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

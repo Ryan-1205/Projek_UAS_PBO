@@ -59,5 +59,15 @@ namespace Lab_DKV.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hlm_regis {
+            get {
+                object obj = ResourceManager.GetObject("hlm_regis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

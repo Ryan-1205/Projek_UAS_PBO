@@ -10,6 +10,8 @@ namespace Lab_DKV
         public hlm_register()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Zoom;
+
         }
 
         private void hlm_register_Load(object sender, EventArgs e)
@@ -19,6 +21,21 @@ namespace Lab_DKV
 
 
         private void btn_Register_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtUsernameReg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btndaftar_Click(object sender, EventArgs e)
         {
             string username = txtUsernameReg.Text.Trim();
             string nis = txtNisReg.Text.Trim();
@@ -72,7 +89,7 @@ namespace Lab_DKV
 
                     MessageBox.Show("Register berhasil!", "Sukses",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
                     this.Hide();
                     hlm_login loginPage = new hlm_login();
                     loginPage.Show();
@@ -85,9 +102,11 @@ namespace Lab_DKV
             }
         }
 
-        private void txtUsernameReg_TextChanged(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            hlm_login registerPage = new hlm_login();
+            registerPage.Show();
         }
     }
 }
