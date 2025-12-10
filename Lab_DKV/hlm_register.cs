@@ -1,8 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Lab_DKV
@@ -111,33 +110,16 @@ namespace Lab_DKV
         }
 
 
-        private bool firstEdit = true;
-        private void txtNisReg_TextChanged(object sender, EventArgs e)
-        {            
-            // kalau awalnya placeholder
-            /*if (txtNisReg.Text == "Masukkan NIS")
-                return;
+        private async void ShowNisWarning()
+        {
+            lblNisWarning.Text = "NIM berupa angka";
+            lblNisWarning.Visible = true;
 
-            // kalau textbox lagi fokus dan placeholder belum dihapus
-            if (txtNisReg.PasswordChar != '*' && txtNisReg.Focused)
-            {
-                // hilangkan placeholder kalau masih menempel
-                txtNisReg.Text = txtNisReg.Text.Replace("Masukan NIS", "");
-
-                // aktifkan password char
-                txtNisReg.PasswordChar = '*';
-                txtNisReg.ForeColor = Color.Black;
-
-                // kembalikan cursor ke akhir
-                txtNisReg.SelectionStart = txtNisReg.Text.Length;
-            }*/
-
-           /* if (!firstEdit) return;
-
-            firstEdit = false;
-            txtNisReg.Text = "";
-            txtNisReg.PasswordChar = '*';*/
+            await Task.Delay(1200);
+            lblNisWarning.Visible = false;
         }
+
+
 
         bool showingPassword = false;
         private void btnView_Click(object sender, EventArgs e)
@@ -159,6 +141,15 @@ namespace Lab_DKV
 
             // jaga caret tetap di akhir
             txtNisReg.SelectionStart = txtNisReg.Text.Length;
+        }
+
+        private void txtNisReg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                ShowNisWarning();
+            }
         }
     }
 }

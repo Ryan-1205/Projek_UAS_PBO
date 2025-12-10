@@ -35,6 +35,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.btnView = new System.Windows.Forms.Button();
+            this.lblNisWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsernameReg
@@ -42,6 +43,7 @@
             resources.ApplyResources(this.txtUsernameReg, "txtUsernameReg");
             this.txtUsernameReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtUsernameReg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsernameReg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsernameReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUsernameReg.Name = "txtUsernameReg";
             this.txtUsernameReg.TextChanged += new System.EventHandler(this.txtUsernameReg_TextChanged);
@@ -53,7 +55,7 @@
             this.txtNisReg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNisReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNisReg.Name = "txtNisReg";
-            this.txtNisReg.TextChanged += new System.EventHandler(this.txtNisReg_TextChanged);
+            this.txtNisReg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNisReg_KeyPress);
             // 
             // btndaftar
             // 
@@ -90,10 +92,18 @@
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
+            // lblNisWarning
+            // 
+            resources.ApplyResources(this.lblNisWarning, "lblNisWarning");
+            this.lblNisWarning.BackColor = System.Drawing.Color.Transparent;
+            this.lblNisWarning.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblNisWarning.Name = "lblNisWarning";
+            // 
             // hlm_register
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblNisWarning);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btndaftar);
             this.Controls.Add(this.btnLogin);
@@ -115,5 +125,6 @@
         private System.Windows.Forms.Button btnLogin;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Label lblNisWarning;
     }
 }
