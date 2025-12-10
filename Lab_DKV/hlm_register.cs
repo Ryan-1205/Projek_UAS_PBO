@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Lab_DKV
@@ -10,8 +12,7 @@ namespace Lab_DKV
         public hlm_register()
         {
             InitializeComponent();
-            this.BackgroundImageLayout = ImageLayout.Zoom;
-
+            this.BackgroundImageLayout = ImageLayout.Zoom;                    
         }
 
         private void hlm_register_Load(object sender, EventArgs e)
@@ -107,6 +108,57 @@ namespace Lab_DKV
             this.Hide();
             hlm_login registerPage = new hlm_login();
             registerPage.Show();
+        }
+
+
+        private bool firstEdit = true;
+        private void txtNisReg_TextChanged(object sender, EventArgs e)
+        {            
+            // kalau awalnya placeholder
+            /*if (txtNisReg.Text == "Masukkan NIS")
+                return;
+
+            // kalau textbox lagi fokus dan placeholder belum dihapus
+            if (txtNisReg.PasswordChar != '*' && txtNisReg.Focused)
+            {
+                // hilangkan placeholder kalau masih menempel
+                txtNisReg.Text = txtNisReg.Text.Replace("Masukan NIS", "");
+
+                // aktifkan password char
+                txtNisReg.PasswordChar = '*';
+                txtNisReg.ForeColor = Color.Black;
+
+                // kembalikan cursor ke akhir
+                txtNisReg.SelectionStart = txtNisReg.Text.Length;
+            }*/
+
+           /* if (!firstEdit) return;
+
+            firstEdit = false;
+            txtNisReg.Text = "";
+            txtNisReg.PasswordChar = '*';*/
+        }
+
+        bool showingPassword = false;
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            if (showingPassword)
+            {
+                // mode sembunyikan
+                txtNisReg.PasswordChar = '*';
+                showingPassword = false;
+                btnView.BackgroundImage = Properties.Resources.notview;
+            }
+            else
+            {
+                // mode tampilkan
+                txtNisReg.PasswordChar = '\0';
+                showingPassword = true;
+                btnView.BackgroundImage = Properties.Resources.view;
+            }
+
+            // jaga caret tetap di akhir
+            txtNisReg.SelectionStart = txtNisReg.Text.Length;
         }
     }
 }

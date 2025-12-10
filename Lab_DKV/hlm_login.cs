@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Lab_DKV
 {
-    public partial class hlm_login : Form
+    public partial class hlm_login: Form
     {
         // Connection string ke database
         string conString = "server=localhost;uid=root;pwd=;database=lab_dkv;";

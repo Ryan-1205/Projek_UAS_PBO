@@ -185,5 +185,11 @@
   <ItemGroup>
     <None Include="Resources\hlm_regis.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
