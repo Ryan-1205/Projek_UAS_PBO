@@ -117,4 +117,379 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtKodeBarang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtKodeBarang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 10.2pt</value>
+  </data>
+  <data name="txtKodeBarang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 238</value>
+  </data>
+  <data name="txtKodeBarang.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>414, 35</value>
+  </data>
+  <data name="txtKodeBarang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtKodeBarang.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtKodeBarang.Name" xml:space="preserve">
+    <value>txtKodeBarang</value>
+  </data>
+  <data name="&gt;&gt;txtKodeBarang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtKodeBarang.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtKodeBarang.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnTambah.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnTambah.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnTambah.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnTambah.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnTambah.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt, style=Bold</value>
+  </data>
+  <data name="btnTambah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTambah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>206, 504</value>
+  </data>
+  <data name="btnTambah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 34</value>
+  </data>
+  <data name="btnTambah.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnTambah.Text" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="&gt;&gt;btnTambah.Name" xml:space="preserve">
+    <value>btnTambah</value>
+  </data>
+  <data name="&gt;&gt;btnTambah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTambah.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTambah.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnHapus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnHapus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnHapus.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnHapus.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnHapus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt, style=Bold</value>
+  </data>
+  <data name="btnHapus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnHapus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 504</value>
+  </data>
+  <data name="btnHapus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 34</value>
+  </data>
+  <data name="btnHapus.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnHapus.Text" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="&gt;&gt;btnHapus.Name" xml:space="preserve">
+    <value>btnHapus</value>
+  </data>
+  <data name="&gt;&gt;btnHapus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHapus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnHapus.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnCari.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCari.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnCari.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCari.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCari.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt, style=Bold</value>
+  </data>
+  <data name="btnCari.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCari.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 457</value>
+  </data>
+  <data name="btnCari.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 34</value>
+  </data>
+  <data name="btnCari.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnCari.Text" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="&gt;&gt;btnCari.Name" xml:space="preserve">
+    <value>btnCari</value>
+  </data>
+  <data name="&gt;&gt;btnCari.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCari.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCari.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtNamaBarang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtNamaBarang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 10.2pt</value>
+  </data>
+  <data name="txtNamaBarang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 296</value>
+  </data>
+  <data name="txtNamaBarang.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>414, 35</value>
+  </data>
+  <data name="txtNamaBarang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="txtNamaBarang.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txtNamaBarang.Name" xml:space="preserve">
+    <value>txtNamaBarang</value>
+  </data>
+  <data name="&gt;&gt;txtNamaBarang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNamaBarang.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtNamaBarang.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtMerek.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtMerek.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 10.2pt</value>
+  </data>
+  <data name="txtMerek.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 351</value>
+  </data>
+  <data name="txtMerek.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>414, 35</value>
+  </data>
+  <data name="txtMerek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="txtMerek.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtMerek.Name" xml:space="preserve">
+    <value>txtMerek</value>
+  </data>
+  <data name="&gt;&gt;txtMerek.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMerek.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtMerek.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtJumlahBarang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtJumlahBarang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 10.2pt</value>
+  </data>
+  <data name="txtJumlahBarang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 407</value>
+  </data>
+  <data name="txtJumlahBarang.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>414, 35</value>
+  </data>
+  <data name="txtJumlahBarang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="txtJumlahBarang.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtJumlahBarang.Name" xml:space="preserve">
+    <value>txtJumlahBarang</value>
+  </data>
+  <data name="&gt;&gt;txtJumlahBarang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtJumlahBarang.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtJumlahBarang.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnKirim.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnKirim.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnKirim.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnKirim.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnKirim.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt, style=Bold</value>
+  </data>
+  <data name="btnKirim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnKirim.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1060, 589</value>
+  </data>
+  <data name="btnKirim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 34</value>
+  </data>
+  <data name="btnKirim.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnKirim.Text" xml:space="preserve">
+    <value>Kirim</value>
+  </data>
+  <data name="&gt;&gt;btnKirim.Name" xml:space="preserve">
+    <value>btnKirim</value>
+  </data>
+  <data name="&gt;&gt;btnKirim.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnKirim.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnKirim.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gridListPinjamBarang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>437, 342</value>
+  </data>
+  <data name="gridListPinjamBarang.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="gridListPinjamBarang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>755, 204</value>
+  </data>
+  <data name="gridListPinjamBarang.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;gridListPinjamBarang.Name" xml:space="preserve">
+    <value>gridListPinjamBarang</value>
+  </data>
+  <data name="&gt;&gt;gridListPinjamBarang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gridListPinjamBarang.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gridListPinjamBarang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gridKetersediaanBarang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 147</value>
+  </data>
+  <data name="gridKetersediaanBarang.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="gridKetersediaanBarang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>755, 95</value>
+  </data>
+  <data name="gridKetersediaanBarang.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;gridKetersediaanBarang.Name" xml:space="preserve">
+    <value>gridKetersediaanBarang</value>
+  </data>
+  <data name="&gt;&gt;gridKetersediaanBarang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gridKetersediaanBarang.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gridKetersediaanBarang.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1262, 673</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1280, 720</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1280, 720</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Pengajuan_Peminjaman</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>hlm_peminjaman</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

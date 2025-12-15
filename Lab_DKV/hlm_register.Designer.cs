@@ -98,6 +98,7 @@
             this.lblNisWarning.BackColor = System.Drawing.Color.Transparent;
             this.lblNisWarning.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblNisWarning.Name = "lblNisWarning";
+            this.lblNisWarning.Click += new System.EventHandler(this.lblNisWarning_Click);
             // 
             // hlm_register
             // 
@@ -110,7 +111,6 @@
             this.Controls.Add(this.txtUsernameReg);
             this.Controls.Add(this.txtNisReg);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "hlm_register";
             this.Load += new System.EventHandler(this.hlm_register_Load);
             this.ResumeLayout(false);

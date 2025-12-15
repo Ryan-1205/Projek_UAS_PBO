@@ -10,8 +10,7 @@ namespace Lab_DKV
     {
         public hlm_register()
         {
-            InitializeComponent();
-            this.BackgroundImageLayout = ImageLayout.Zoom;                    
+            InitializeComponent();                    
         }
 
         private void hlm_register_Load(object sender, EventArgs e)
@@ -150,6 +149,11 @@ namespace Lab_DKV
                 e.Handled = true;
                 ShowNisWarning();
             }
+        }
+
+        private void lblNisWarning_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

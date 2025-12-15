@@ -102,6 +102,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtNis);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "hlm_login";
             this.Load += new System.EventHandler(this.hlm_login_Load);
             this.ResumeLayout(false);

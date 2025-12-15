@@ -63,9 +63,39 @@ namespace Lab_DKV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hlm_login {
+            get {
+                object obj = ResourceManager.GetObject("hlm_login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hlm_peminjaman {
+            get {
+                object obj = ResourceManager.GetObject("hlm_peminjaman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hlm_regis {
             get {
                 object obj = ResourceManager.GetObject("hlm_regis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hlm_siswa {
+            get {
+                object obj = ResourceManager.GetObject("hlm_siswa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

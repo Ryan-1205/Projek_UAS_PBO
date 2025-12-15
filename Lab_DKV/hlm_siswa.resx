@@ -118,225 +118,150 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtNis.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="btnKeluar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnKeluar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnKeluar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtNis.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 15pt</value>
-  </data>
-  <data name="txtNis.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>On</value>
-  </data>
-  <data name="txtNis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 380</value>
-  </data>
-  <data name="txtNis.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>414, 35</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtNis.MaxLength" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="txtNis.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>259, 22</value>
-  </data>
-  <data name="txtNis.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="txtNis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 29</value>
-  </data>
-  <data name="txtNis.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtNis.Name" xml:space="preserve">
-    <value>txtNis</value>
-  </data>
-  <data name="&gt;&gt;txtNis.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNis.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtNis.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txtUsername.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="txtUsername.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 15pt</value>
-  </data>
-  <data name="txtUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 310</value>
-  </data>
-  <data name="txtUsername.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>414, 35</value>
-  </data>
-  <data name="txtUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 29</value>
-  </data>
-  <data name="txtUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
-    <value>txtUsername</value>
-  </data>
-  <data name="&gt;&gt;txtUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUsername.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtUsername.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnLogin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="btnLogin.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnLogin.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="btnLogin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnLogin.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnKeluar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 15pt, style=Bold</value>
   </data>
-  <data name="btnLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnKeluar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 447</value>
+  <data name="btnKeluar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>562, 491</value>
   </data>
-  <data name="btnLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 40</value>
+  <data name="btnKeluar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 56</value>
   </data>
-  <data name="btnLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnKeluar.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="btnLogin.Text" xml:space="preserve">
-    <value>Login</value>
+  <data name="btnKeluar.Text" xml:space="preserve">
+    <value>Keluar</value>
   </data>
-  <data name="&gt;&gt;btnLogin.Name" xml:space="preserve">
-    <value>btnLogin</value>
+  <data name="&gt;&gt;btnKeluar.Name" xml:space="preserve">
+    <value>btnKeluar</value>
   </data>
-  <data name="&gt;&gt;btnLogin.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnKeluar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnLogin.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnKeluar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnLogin.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnKeluar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnDaftar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="btnPinjamBarang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="btnDaftar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="btnPinjamBarang.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="btnDaftar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnPinjamBarang.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btnDaftar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 15pt</value>
+  <data name="btnPinjamBarang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 15pt, style=Bold</value>
   </data>
-  <data name="btnDaftar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnPinjamBarang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnDaftar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 447</value>
+  <data name="btnPinjamBarang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>430, 329</value>
   </data>
-  <data name="btnDaftar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 38</value>
+  <data name="btnPinjamBarang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 52</value>
   </data>
-  <data name="btnDaftar.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="btnPinjamBarang.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="btnDaftar.Text" xml:space="preserve">
-    <value>Daftar</value>
+  <data name="btnPinjamBarang.Text" xml:space="preserve">
+    <value>Pinjam Barang</value>
   </data>
-  <data name="&gt;&gt;btnDaftar.Name" xml:space="preserve">
-    <value>btnDaftar</value>
+  <data name="&gt;&gt;btnPinjamBarang.Name" xml:space="preserve">
+    <value>btnPinjamBarang</value>
   </data>
-  <data name="&gt;&gt;btnDaftar.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnPinjamBarang.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnDaftar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPinjamBarang.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnDaftar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPinjamBarang.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnView.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
+  <data name="btnKembalikanBarang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="btnView.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnKembalikanBarang.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnKembalikanBarang.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnKembalikanBarang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 15pt, style=Bold</value>
+  </data>
+  <data name="btnKembalikanBarang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>789, 374</value>
+  <data name="btnKembalikanBarang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>430, 411</value>
   </data>
-  <data name="btnView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+  <data name="btnKembalikanBarang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 52</value>
   </data>
-  <data name="btnView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 40</value>
+  <data name="btnKembalikanBarang.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="btnView.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="btnKembalikanBarang.Text" xml:space="preserve">
+    <value>Kembalikan Barang</value>
   </data>
-  <data name="&gt;&gt;btnView.Name" xml:space="preserve">
-    <value>btnView</value>
+  <data name="&gt;&gt;btnKembalikanBarang.Name" xml:space="preserve">
+    <value>btnKembalikanBarang</value>
   </data>
-  <data name="&gt;&gt;btnView.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnKembalikanBarang.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnView.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnKembalikanBarang.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnView.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnKembalikanBarang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblNisWarning.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblNisWarning.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Narrow, 10.2pt, style=Bold</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 13.8pt, style=Bold</value>
   </data>
-  <data name="lblNisWarning.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 20</value>
   </data>
-  <data name="lblNisWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>489, 382</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 27</value>
   </data>
-  <data name="lblNisWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="lblNisWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="lblNisWarning.Text" xml:space="preserve">
-    <value>NIS berupa angka</value>
-  </data>
-  <data name="lblNisWarning.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblNisWarning.Name" xml:space="preserve">
-    <value>lblNisWarning</value>
-  </data>
-  <data name="&gt;&gt;lblNisWarning.Type" xml:space="preserve">
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblNisWarning.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblNisWarning.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -367,10 +292,10 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>hlm_login</value>
+    <value>hlm_siswa</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>hlm_login</value>
+    <value>hlm_siswa</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
