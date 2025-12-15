@@ -47,19 +47,20 @@ namespace Lab_DKV
                                 string username = dr["username"]?.ToString() ?? string.Empty;
                                 string role = dr["role"]?.ToString() ?? string.Empty;
 
-                                // 2. DEBUGGING: Cek apakah ID tertangkap (Boleh dihapus nanti)
+                                /* 2. DEBUGGING: Cek apakah ID tertangkap (Boleh dihapus nanti)
                                 if (idUser == 0)
                                 {
                                     MessageBox.Show("Login berhasil tapi ID User 0. Cek Database tbl_user!");
                                     return;
                                 }
+                                */
 
                                 // 3. SIMPAN KE SESSION (PENTING)
                                 Session.UserId = idUser;
                                 Session.UserName = username;
                                 Session.Role = role;
 
-                                MessageBox.Show($"Login Berhasil! ID: {idUser}", "Info"); // Debug info
+                                // MessageBox.Show($"Login Berhasil! ID: {idUser}", "Info"); // Debug info
 
                                 this.Hide();
 

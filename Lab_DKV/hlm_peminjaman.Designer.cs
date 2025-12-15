@@ -32,13 +32,14 @@
             this.txtKodeBarang = new System.Windows.Forms.TextBox();
             this.btnTambah = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
-            this.btnCari = new System.Windows.Forms.Button();
+            this.btnBersihkan = new System.Windows.Forms.Button();
             this.txtNamaBarang = new System.Windows.Forms.TextBox();
             this.txtMerek = new System.Windows.Forms.TextBox();
             this.txtJumlahBarang = new System.Windows.Forms.TextBox();
             this.btnKirim = new System.Windows.Forms.Button();
             this.gridListPinjamBarang = new System.Windows.Forms.DataGridView();
             this.gridKetersediaanBarang = new System.Windows.Forms.DataGridView();
+            this.btnKembali = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridListPinjamBarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridKetersediaanBarang)).BeginInit();
             this.SuspendLayout();
@@ -73,15 +74,15 @@
             this.btnHapus.UseVisualStyleBackColor = false;
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // btnCari
+            // btnBersihkan
             // 
-            resources.ApplyResources(this.btnCari, "btnCari");
-            this.btnCari.BackColor = System.Drawing.Color.Transparent;
-            this.btnCari.FlatAppearance.BorderSize = 0;
-            this.btnCari.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCari.Name = "btnCari";
-            this.btnCari.UseVisualStyleBackColor = false;
-            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
+            resources.ApplyResources(this.btnBersihkan, "btnBersihkan");
+            this.btnBersihkan.BackColor = System.Drawing.Color.Transparent;
+            this.btnBersihkan.FlatAppearance.BorderSize = 0;
+            this.btnBersihkan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBersihkan.Name = "btnBersihkan";
+            this.btnBersihkan.UseVisualStyleBackColor = false;
+            this.btnBersihkan.Click += new System.EventHandler(this.btnBersihkan_Click);
             // 
             // txtNamaBarang
             // 
@@ -138,18 +139,28 @@
             this.gridKetersediaanBarang.RowTemplate.Height = 24;
             this.gridKetersediaanBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridKetersediaanBarang_CellContentClick);
             // 
+            // btnKembali
+            // 
+            resources.ApplyResources(this.btnKembali, "btnKembali");
+            this.btnKembali.BackColor = System.Drawing.Color.Transparent;
+            this.btnKembali.FlatAppearance.BorderSize = 0;
+            this.btnKembali.ForeColor = System.Drawing.Color.Black;
+            this.btnKembali.Name = "btnKembali";
+            this.btnKembali.UseVisualStyleBackColor = false;
+            this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
+            // 
             // hlm_peminjaman
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Lab_DKV.Properties.Resources.hlm_peminjaman;
+            this.Controls.Add(this.btnKembali);
             this.Controls.Add(this.gridKetersediaanBarang);
             this.Controls.Add(this.gridListPinjamBarang);
             this.Controls.Add(this.btnKirim);
             this.Controls.Add(this.txtJumlahBarang);
             this.Controls.Add(this.txtMerek);
             this.Controls.Add(this.txtNamaBarang);
-            this.Controls.Add(this.btnCari);
+            this.Controls.Add(this.btnBersihkan);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.txtKodeBarang);
@@ -168,12 +179,13 @@
         private System.Windows.Forms.TextBox txtKodeBarang;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.Button btnHapus;
-        private System.Windows.Forms.Button btnCari;
+        private System.Windows.Forms.Button btnBersihkan;
         private System.Windows.Forms.TextBox txtNamaBarang;
         private System.Windows.Forms.TextBox txtMerek;
         private System.Windows.Forms.TextBox txtJumlahBarang;
         private System.Windows.Forms.Button btnKirim;
         private System.Windows.Forms.DataGridView gridListPinjamBarang;
         private System.Windows.Forms.DataGridView gridKetersediaanBarang;
+        private System.Windows.Forms.Button btnKembali;
     }
 }

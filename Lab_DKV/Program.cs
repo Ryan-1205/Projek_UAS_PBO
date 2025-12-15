@@ -13,7 +13,7 @@ namespace Lab_DKV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new hlm_pengembalian());
+            Application.Run(new hlm_login());
         }
     }
 }

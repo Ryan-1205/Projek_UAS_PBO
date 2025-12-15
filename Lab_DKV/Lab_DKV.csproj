@@ -238,9 +238,6 @@
     <None Include="Resources\hlm_siswa.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hlm_peminjaman.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -263,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Asset 21-100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hlm_peminjaman.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
