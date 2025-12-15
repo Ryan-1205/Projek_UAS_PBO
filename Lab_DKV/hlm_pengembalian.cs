@@ -215,7 +215,7 @@ namespace Lab_DKV
                         foreach (string idDetail in detailIdToProcess)
                         {
                             // A. Ambil ID Barang, Unit, dan ID Peminjaman dari detail
-                            string sqlGetDetail = "SELECT id_barang, unit, id_peminjaman FROM tbl_detailpb WHERE id_detailpb = @IdDetail";
+                            string sqlGetDetail = "SELECT id_barang, jumlah_barang, id_peminjaman FROM tbl_detailpb WHERE id_detailpb = @IdDetail";
                             MySqlCommand cmdGetDetail = new MySqlCommand(sqlGetDetail, conn, trans);
                             cmdGetDetail.Parameters.AddWithValue("@IdDetail", idDetail);
 
@@ -229,7 +229,7 @@ namespace Lab_DKV
                                 {
                                     idBarang = reader["id_barang"].ToString();
                                     idPeminjaman = reader["id_peminjaman"].ToString();
-                                    unitDikembalikan = Convert.ToInt32(reader["unit"]);
+                                    unitDikembalikan = Convert.ToInt32(reader["jumlah_barang"]);
                                 }
                                 reader.Close();
                             }
@@ -241,9 +241,9 @@ namespace Lab_DKV
                             cmdUpdateDetail.ExecuteNonQuery();
 
                             // C. Update stok barang di tbl_barang (stok bertambah)
-                            string sqlUpdateStok = "UPDATE tbl_barang SET jumlah_barang = jumlah_barang + @Unit WHERE id_barang = @IdBarang;";
+                            string sqlUpdateStok = "UPDATE tbl_barang SET jumlah_barang = jumlah_barang + @jumlah_barang WHERE id_barang = @IdBarang;";
                             MySqlCommand cmdUpdateStok = new MySqlCommand(sqlUpdateStok, conn, trans);
-                            cmdUpdateStok.Parameters.AddWithValue("@Unit", unitDikembalikan);
+                            cmdUpdateStok.Parameters.AddWithValue("@jumlah_barang", unitDikembalikan);
                             cmdUpdateStok.Parameters.AddWithValue("@IdBarang", idBarang);
                             cmdUpdateStok.ExecuteNonQuery();
 

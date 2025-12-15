@@ -111,6 +111,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="hlm_barang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hlm_barang.Designer.cs">
+      <DependentUpon>hlm_barang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hlm_DataUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hlm_DataUser.Designer.cs">
+      <DependentUpon>hlm_DataUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="hlm_peminjaman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +162,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="tbl_peminjaman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tbl_peminjaman.Designer.cs">
+      <DependentUpon>tbl_peminjaman.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="hlm_barang.resx">
+      <DependentUpon>hlm_barang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hlm_DataUser.resx">
+      <DependentUpon>hlm_DataUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="hlm_peminjaman.resx">
       <DependentUpon>hlm_peminjaman.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +199,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tbl_peminjaman.resx">
+      <DependentUpon>tbl_peminjaman.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -227,6 +254,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Pengajuan Pengembalian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 19-100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 20-100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 21-100.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
