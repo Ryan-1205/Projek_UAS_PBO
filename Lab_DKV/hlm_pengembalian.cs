@@ -4,80 +4,80 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement; // Boleh dihapus kalau gak ada error
 
 namespace Lab_DKV
 {
     public partial class hlm_pengembalian : Form
     {
         // =================================================================
-        // 🚨 1. PROPERTI DAN KONFIGURASI
+        // 1. PROPERTI USER
         // =================================================================
-        private string connString = "Server=localhost;Database=lab_dkv;Uid=root;Pwd=;"; // GANTI INI SESUAI DB LU
-        private string _nisAtauIdUser;
+        private int _currentUserId;
+        private string _currentUserName;
 
         // =================================================================
-        // 🚨 2. CONSTRUCTOR
+        // 2. CONSTRUCTOR
         // =================================================================
         public hlm_pengembalian()
         {
-            // Panggil InitializeComponent()
-            // Asumsi method ini ada di hlm_pengembalian.Designer.cs
             InitializeComponent();
         }
 
-        public hlm_pengembalian(string nisAtauIdUser)
+        // Konstruktor utama yang dipanggil dari hlm_siswa
+        public hlm_pengembalian(int userId, string userName) : this()
         {
-            InitializeComponent();
-            _nisAtauIdUser = nisAtauIdUser;
+            SetCurrentUser(userId, userName);
+        }
+
+        public void SetCurrentUser(int userId, string userName)
+        {
+            _currentUserId = userId;
+            _currentUserName = userName;
         }
 
         // =================================================================
-        // 🚨 3. EVENT HANDLER UTAMA
+        // 3. EVENT HANDLER UTAMA
         // =================================================================
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void hlm_pengembalian_Load(object sender, EventArgs e)
         {
-            // Panggil getData() untuk menampilkan data saat form pertama kali dibuka
+            // Validasi User
+            if (_currentUserId <= 0)
+            {
+                if (Session.UserId > 0)
+                {
+                    _currentUserId = Session.UserId;
+                    _currentUserName = Session.UserName;
+                }
+                else
+                {
+                    MessageBox.Show("User tidak terdeteksi. Silakan login ulang.", "Akses Ditolak", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Close();
+                    return;
+                }
+            }
+
+            // Load Data
             getData();
         }
 
-        // Method ini tidak dipakai di desain lu, tapi di-retain aja
         private void buttonGetData_Click(object sender, EventArgs e)
         {
             getData();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Kosong, biasanya dipakai untuk handling klik di dalam grid, misal check box
-        }
-
-        // Event handler untuk textBox1_NamaPenerima
-        private void textBox1_NamaPenerima_TextChanged(object sender, EventArgs e) // Nama method diubah biar lebih sesuai (asumsi nama aslinya TextChanged)
-        {
-            // Biasanya kosong, atau bisa dipakai buat validasi input real-time
-        }
-
-        // Event handler Tanggal_ValueChanged tidak dipakai
-        private void Tanggal_ValueChanged(object sender, EventArgs e)
-        {
-            // Kosong
-        }
-
-
         // =================================================================
-        // 🚨 4. FUNGSI UTILITY & BUSINESS LOGIC
+        // 4. FUNGSI UTILITY & BUSINESS LOGIC
         // =================================================================
 
         private void getData()
         {
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            using (MySqlConnection conn = DB.GetConnection())
             {
                 try
                 {
                     conn.Open();
-                    // Query: Ambil detail barang yang statusnya BELUM KEMBALI (status_kembali = 0)
+                    // Query: Ambil detail barang yang dipinjam user ini & BELUM kembali
                     string query = @"
                         SELECT 
                             D.id_detailpb, 
@@ -90,11 +90,11 @@ namespace Lab_DKV
                         FROM tbl_detailpb D
                         INNER JOIN tbl_peminjaman P ON D.id_peminjaman = P.id_peminjaman
                         INNER JOIN tbl_barang B ON D.id_barang = B.id_barang
-                        WHERE P.id_user = @IdUser AND D.status_kembali = 0; 
+                        WHERE P.id_user = @uid AND (D.status_kembali IS NULL OR D.status_kembali = 0); 
                     ";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@IdUser", _nisAtauIdUser);
+                    cmd.Parameters.AddWithValue("@uid", _currentUserId);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -102,7 +102,7 @@ namespace Lab_DKV
 
                     dataGridView1.DataSource = dt;
 
-                    // Tambahin kolom check box kalau belum ada (Asumsi nama kolomnya 'chkBox')
+                    // Tambahkan kolom CheckBox jika belum ada
                     if (dataGridView1.Columns["chkBox"] == null)
                     {
                         DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
@@ -111,63 +111,48 @@ namespace Lab_DKV
                         dataGridView1.Columns.Insert(0, chk);
                     }
 
-                    // Sembunyikan ID yang tidak perlu dilihat user
-                    if (dataGridView1.Columns.Contains("id_detailpb"))
-                        dataGridView1.Columns["id_detailpb"].Visible = false;
-                    if (dataGridView1.Columns.Contains("id_peminjaman"))
-                        dataGridView1.Columns["id_peminjaman"].Visible = false;
+                    // Sembunyikan ID
+                    if (dataGridView1.Columns.Contains("id_detailpb")) dataGridView1.Columns["id_detailpb"].Visible = false;
+                    if (dataGridView1.Columns.Contains("id_peminjaman")) dataGridView1.Columns["id_peminjaman"].Visible = false;
 
-                    if (dt.Rows.Count == 0)
-                    {
-                        // Sesuai logika lu: kalau data kosong, barang sudah dikembalikan semua
-                        MessageBox.Show("Tidak ada barang pinjaman aktif yang perlu dikembalikan.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
+                    // Atur Lebar Kolom
+                    if (dataGridView1.Columns.Contains("nama_barang")) dataGridView1.Columns["nama_barang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error saat mengambil data pinjaman: " + ex.Message, "Error Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error mengambil data: " + ex.Message, "Error Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         // =================================================================
-        // 🚨 5. BUTTON CLICKS
+        // 5. BUTTON CLICKS
         // =================================================================
 
         private void Bt_Pilih_Semua_Click(object sender, EventArgs e)
         {
-            // Logic buat Check/Uncheck semua baris
             bool checkStatus = true;
             int checkedCount = 0;
 
-            // Cek status current
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["chkBox"] != null && row.Cells["chkBox"].Value != null && (bool)row.Cells["chkBox"].Value == true)
+                if (row.Cells["chkBox"].Value != null && (bool)row.Cells["chkBox"].Value == true)
                 {
                     checkedCount++;
                 }
             }
 
             if (checkedCount == dataGridView1.Rows.Count)
-            {
-                checkStatus = false; // Kalau semua udah ke-check, uncheck semua
-            }
+                checkStatus = false;
 
-            // Terapkan status
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["chkBox"] != null)
-                {
-                    row.Cells["chkBox"].Value = checkStatus;
-                }
+                row.Cells["chkBox"].Value = checkStatus;
             }
         }
 
         private void Kirim_Click(object sender, EventArgs e)
         {
-            // 1. Validasi Input
             if (string.IsNullOrWhiteSpace(NamaPenerima.Text))
             {
                 MessageBox.Show("Nama Petugas Penerima wajib diisi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -175,119 +160,125 @@ namespace Lab_DKV
                 return;
             }
 
-            List<string> detailIdToProcess = new List<string>();
-            string namaPenerima = NamaPenerima.Text;
+            List<string> detailIdList = new List<string>();
 
-            // Kumpulkan ID Detail Pinjaman (id_detailpb) yang dicentang
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                // Pastikan bukan row kosong
-                if (row.Cells["chkBox"] != null && row.Cells["chkBox"].Value != null && (bool)row.Cells["chkBox"].Value == true)
+                object val = row.Cells["chkBox"].Value;
+                if (val != null && (bool)val == true)
                 {
-                    detailIdToProcess.Add(row.Cells["id_detailpb"].Value.ToString());
+                    if (row.Cells["id_detailpb"].Value != null)
+                    {
+                        detailIdList.Add(row.Cells["id_detailpb"].Value.ToString());
+                    }
                 }
             }
 
-            if (detailIdToProcess.Count == 0)
+            if (detailIdList.Count == 0)
             {
                 MessageBox.Show("Pilih minimal satu barang yang akan dikembalikan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Konfirmasi
-            DialogResult dialogResult = MessageBox.Show($"Yakin mau memproses pengembalian {detailIdToProcess.Count} barang?",
-                "Konfirmasi Pengembalian", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (MessageBox.Show($"Kembalikan {detailIdList.Count} barang terpilih?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
-            if (dialogResult == DialogResult.Yes)
+            using (MySqlConnection conn = DB.GetConnection())
             {
-                // 3. Eksekusi Transaksi Database
-                using (MySqlConnection conn = new MySqlConnection(connString))
+                conn.Open();
+                using (MySqlTransaction trans = conn.BeginTransaction())
                 {
-                    conn.Open();
-                    MySqlTransaction trans = conn.BeginTransaction();
-
                     try
                     {
-                        int successfulUpdates = 0;
+                        string namaPetugas = NamaPenerima.Text.Trim();
                         string tglKembali = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                        int suksesCount = 0;
 
-                        // Loop dan Proses UPDATE
-                        foreach (string idDetail in detailIdToProcess)
+                        foreach (string idDetail in detailIdList)
                         {
-                            // A. Ambil ID Barang, Unit, dan ID Peminjaman dari detail
-                            string sqlGetDetail = "SELECT id_barang, jumlah_barang, id_peminjaman FROM tbl_detailpb WHERE id_detailpb = @IdDetail";
-                            MySqlCommand cmdGetDetail = new MySqlCommand(sqlGetDetail, conn, trans);
-                            cmdGetDetail.Parameters.AddWithValue("@IdDetail", idDetail);
+                            string qGet = "SELECT id_barang, unit, id_peminjaman FROM tbl_detailpb WHERE id_detailpb = @id";
+                            int idBarang = 0;
+                            int unit = 0;
+                            int idPeminjaman = 0;
 
-                            string idBarang = "";
-                            string idPeminjaman = "";
-                            int unitDikembalikan = 0;
-
-                            using (MySqlDataReader reader = cmdGetDetail.ExecuteReader())
+                            using (MySqlCommand cmdGet = new MySqlCommand(qGet, conn, trans))
                             {
-                                if (reader.Read())
+                                cmdGet.Parameters.AddWithValue("@id", idDetail);
+                                using (MySqlDataReader dr = cmdGet.ExecuteReader())
                                 {
-                                    idBarang = reader["id_barang"].ToString();
-                                    idPeminjaman = reader["id_peminjaman"].ToString();
-                                    unitDikembalikan = Convert.ToInt32(reader["jumlah_barang"]);
+                                    if (dr.Read())
+                                    {
+                                        idBarang = Convert.ToInt32(dr["id_barang"]);
+                                        unit = Convert.ToInt32(dr["unit"]);
+                                        idPeminjaman = Convert.ToInt32(dr["id_peminjaman"]);
+                                    }
                                 }
-                                reader.Close();
                             }
 
-                            // B. Update status_kembali di tbl_detailpb jadi 1 (Sudah Kembali)
-                            string sqlUpdateDetail = "UPDATE tbl_detailpb SET status_kembali = 1 WHERE id_detailpb = @IdDetail;";
-                            MySqlCommand cmdUpdateDetail = new MySqlCommand(sqlUpdateDetail, conn, trans);
-                            cmdUpdateDetail.Parameters.AddWithValue("@IdDetail", idDetail);
-                            cmdUpdateDetail.ExecuteNonQuery();
+                            if (idBarang > 0)
+                            {
+                                string qUpdateDetail = "UPDATE tbl_detailpb SET status_kembali = 1 WHERE id_detailpb = @id";
+                                using (MySqlCommand cmdUpd = new MySqlCommand(qUpdateDetail, conn, trans))
+                                {
+                                    cmdUpd.Parameters.AddWithValue("@id", idDetail);
+                                    cmdUpd.ExecuteNonQuery();
+                                }
 
-                            // C. Update stok barang di tbl_barang (stok bertambah)
-                            string sqlUpdateStok = "UPDATE tbl_barang SET jumlah_barang = jumlah_barang + @jumlah_barang WHERE id_barang = @IdBarang;";
-                            MySqlCommand cmdUpdateStok = new MySqlCommand(sqlUpdateStok, conn, trans);
-                            cmdUpdateStok.Parameters.AddWithValue("@jumlah_barang", unitDikembalikan);
-                            cmdUpdateStok.Parameters.AddWithValue("@IdBarang", idBarang);
-                            cmdUpdateStok.ExecuteNonQuery();
+                                string qStok = "UPDATE tbl_barang SET jumlah_barang = jumlah_barang + @u WHERE id_barang = @idb";
+                                using (MySqlCommand cmdStok = new MySqlCommand(qStok, conn, trans))
+                                {
+                                    cmdStok.Parameters.AddWithValue("@u", unit);
+                                    cmdStok.Parameters.AddWithValue("@idb", idBarang);
+                                    cmdStok.ExecuteNonQuery();
+                                }
 
-                            // D. Insert ke tbl_pengembalian (Dicatat sebagai riwayat)
-                            string sqlInsertPengembalian = @"
-                                INSERT INTO tbl_pengembalian (id_peminjaman, tgl_kembali, nama_petugaskembali, catatan) 
-                                VALUES (@IdPeminjaman, @TglKembali, @NamaPetugas, @Catatan);";
+                                string qLog = @"INSERT INTO tbl_pengembalian (id_peminjaman, tgl_kembali, nama_petugaskembali, catatan) 
+                                                VALUES (@idp, @tgl, @petugas, @cat)";
+                                using (MySqlCommand cmdLog = new MySqlCommand(qLog, conn, trans))
+                                {
+                                    cmdLog.Parameters.AddWithValue("@idp", idPeminjaman);
+                                    cmdLog.Parameters.AddWithValue("@tgl", tglKembali);
+                                    cmdLog.Parameters.AddWithValue("@petugas", namaPetugas);
+                                    cmdLog.Parameters.AddWithValue("@cat", $"Mengembalikan detail ID: {idDetail}");
+                                    cmdLog.ExecuteNonQuery();
+                                }
 
-                            MySqlCommand cmdInsertPengembalian = new MySqlCommand(sqlInsertPengembalian, conn, trans);
-                            cmdInsertPengembalian.Parameters.AddWithValue("@IdPeminjaman", idPeminjaman);
-                            cmdInsertPengembalian.Parameters.AddWithValue("@TglKembali", tglKembali);
-                            cmdInsertPengembalian.Parameters.AddWithValue("@NamaPetugas", namaPenerima);
-                            cmdInsertPengembalian.Parameters.AddWithValue("@Catatan", $"Pengembalian 1 detail barang ({idDetail}).");
-                            cmdInsertPengembalian.ExecuteNonQuery();
-
-                            successfulUpdates++;
+                                suksesCount++;
+                            }
                         }
 
-                        trans.Commit(); // Semua berhasil, simpan
-                        MessageBox.Show($"Pengembalian {successfulUpdates} barang berhasil diproses.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        getData(); // Refresh Grid View
+                        trans.Commit();
+                        MessageBox.Show($"Berhasil mengembalikan {suksesCount} barang.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Setelah semua selesai, mungkin lu mau cek apakah pinjaman ini sudah lunas?
-                        // (Tidak wajib, tapi bagus buat sistem yang lebih rapi)
-
+                        getData();
+                        NamaPenerima.Clear();
                     }
                     catch (Exception ex)
                     {
-                        trans.Rollback(); // Batalkan semua kalau ada error
-                        MessageBox.Show("Gagal memproses pengembalian: " + ex.Message, "Error Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        trans.Rollback();
+                        MessageBox.Show("Gagal memproses pengembalian: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
 
+        // =================================================================
+        // PERBAIKAN TOMBOL KEMBALI
+        // =================================================================
         private void BtnKembali_Click(object sender, EventArgs e)
         {
+           
+            // 1. Buka kembali halaman siswa dengan membawa ID user yang sedang login
+            hlm_siswa frmSiswa = new hlm_siswa(_currentUserId, _currentUserName);
+            frmSiswa.Show();
+
+            // 2. Tutup halaman pengembalian ini
             this.Close();
-            // Kalau perlu buka form menu siswa, tambahin kodingannya di sini
         }
 
-        private void NamaPenerima_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        // Placeholder Handlers
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void textBox1_NamaPenerima_TextChanged(object sender, EventArgs e) { }
+        private void Tanggal_ValueChanged(object sender, EventArgs e) { }
+        private void NamaPenerima_TextChanged(object sender, EventArgs e) { }
     }
 }

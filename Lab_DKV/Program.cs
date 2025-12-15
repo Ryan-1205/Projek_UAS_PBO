@@ -3,16 +3,24 @@ using System.Windows.Forms;
 
 namespace Lab_DKV
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        // Variabel Global untuk Watcher
+        public static SessionWatcher InactivityTimer;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // ===============================================
+            // SETTING WAKTU AUTO LOGOUT DISINI (Contoh: 5 Menit)
+            // ===============================================
+            InactivityTimer = new SessionWatcher(5);
+            // ===============================================
+
+            // Jalankan form login pertama kali
             Application.Run(new hlm_login());
         }
     }

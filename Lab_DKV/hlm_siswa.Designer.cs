@@ -42,6 +42,7 @@
             this.btnKeluar.FlatAppearance.BorderSize = 0;
             this.btnKeluar.Name = "btnKeluar";
             this.btnKeluar.UseVisualStyleBackColor = false;
+            this.btnKeluar.Click += new System.EventHandler(this.btnKeluar_Click);
             // 
             // btnPinjamBarang
             // 
@@ -61,6 +62,7 @@
             this.btnKembalikanBarang.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnKembalikanBarang.Name = "btnKembalikanBarang";
             this.btnKembalikanBarang.UseVisualStyleBackColor = false;
+            this.btnKembalikanBarang.Click += new System.EventHandler(this.btnKembalikanBarang_Click);
             // 
             // label1
             // 
