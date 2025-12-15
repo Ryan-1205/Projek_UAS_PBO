@@ -117,12 +117,6 @@
     <Compile Include="hlm_peminjaman.Designer.cs">
       <DependentUpon>hlm_peminjaman.cs</DependentUpon>
     </Compile>
-    <Compile Include="hlm_pengembalian.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="hlm_pengembalian.Designer.cs">
-      <DependentUpon>hlm_pengembalian.cs</DependentUpon>
-    </Compile>
     <Compile Include="hlm_admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +128,12 @@
     </Compile>
     <Compile Include="hlm_login.Designer.cs">
       <DependentUpon>hlm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hlm_pengembalian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hlm_pengembalian.Designer.cs">
+      <DependentUpon>hlm_pengembalian.cs</DependentUpon>
     </Compile>
     <Compile Include="hlm_register.cs">
       <SubType>Form</SubType>
@@ -153,14 +153,14 @@
     <EmbeddedResource Include="hlm_peminjaman.resx">
       <DependentUpon>hlm_peminjaman.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hlm_pengembalian.resx">
-      <DependentUpon>hlm_pengembalian.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="hlm_admin.resx">
       <DependentUpon>hlm_admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hlm_login.resx">
       <DependentUpon>hlm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hlm_pengembalian.resx">
+      <DependentUpon>hlm_pengembalian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hlm_register.dje-NE.resx">
       <DependentUpon>hlm_register.cs</DependentUpon>
@@ -224,6 +224,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pengajuan Pengembalian.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
