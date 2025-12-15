@@ -122,7 +122,7 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_kode_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 158</value>
+    <value>459, 158</value>
   </data>
   <data name="txt_kode_barang.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 27</value>
@@ -250,7 +250,7 @@
     <value>Arial, 10.2pt, style=Bold</value>
   </data>
   <data name="btn_keluar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 588</value>
+    <value>113, 581</value>
   </data>
   <data name="btn_keluar.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 26</value>
@@ -273,23 +273,59 @@
   <data name="&gt;&gt;btn_keluar.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="btn_hapus.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_hapus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 10.2pt, style=Bold</value>
+  </data>
+  <data name="btn_hapus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_hapus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 581</value>
+  </data>
+  <data name="btn_hapus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 33</value>
+  </data>
+  <data name="btn_hapus.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btn_hapus.Text" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="&gt;&gt;btn_hapus.Name" xml:space="preserve">
+    <value>btn_hapus</value>
+  </data>
+  <data name="&gt;&gt;btn_hapus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_hapus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_hapus.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="btn_tambah.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="btn_tambah.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 22.2pt, style=Bold</value>
+    <value>Arial, 10.2pt, style=Bold</value>
+  </data>
+  <data name="btn_tambah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btn_tambah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1126, 129</value>
+    <value>737, 581</value>
   </data>
   <data name="btn_tambah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 40</value>
+    <value>155, 33</value>
   </data>
   <data name="btn_tambah.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btn_tambah.Text" xml:space="preserve">
-    <value>+</value>
+    <value>Tambah</value>
   </data>
   <data name="&gt;&gt;btn_tambah.Name" xml:space="preserve">
     <value>btn_tambah</value>
@@ -301,69 +337,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_tambah.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="btn_edit_data.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btn_edit_data.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 10.2pt, style=Bold</value>
-  </data>
-  <data name="btn_edit_data.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_edit_data.Location" type="System.Drawing.Point, System.Drawing">
-    <value>465, 588</value>
-  </data>
-  <data name="btn_edit_data.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 33</value>
-  </data>
-  <data name="btn_edit_data.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btn_edit_data.Text" xml:space="preserve">
-    <value>Edit Data</value>
-  </data>
-  <data name="&gt;&gt;btn_edit_data.Name" xml:space="preserve">
-    <value>btn_edit_data</value>
-  </data>
-  <data name="&gt;&gt;btn_edit_data.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_edit_data.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_edit_data.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btn_reload.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btn_reload.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 10.2pt, style=Bold</value>
-  </data>
-  <data name="btn_reload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>737, 581</value>
-  </data>
-  <data name="btn_reload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 42</value>
-  </data>
-  <data name="btn_reload.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btn_reload.Text" xml:space="preserve">
-    <value>Reload</value>
-  </data>
-  <data name="&gt;&gt;btn_reload.Name" xml:space="preserve">
-    <value>btn_reload</value>
-  </data>
-  <data name="&gt;&gt;btn_reload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_reload.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_reload.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="btn_update.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -373,10 +346,10 @@
     <value>Arial, 10.2pt, style=Bold</value>
   </data>
   <data name="btn_update.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1001, 586</value>
+    <value>1001, 581</value>
   </data>
   <data name="btn_update.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 31</value>
+    <value>157, 33</value>
   </data>
   <data name="btn_update.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -400,7 +373,7 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_nama_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>609, 158</value>
+    <value>584, 158</value>
   </data>
   <data name="txt_nama_barang.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 27</value>
@@ -430,7 +403,7 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_merk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>766, 157</value>
+    <value>741, 157</value>
   </data>
   <data name="txt_merk.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 27</value>
@@ -460,7 +433,7 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_kondisi_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>879, 157</value>
+    <value>854, 157</value>
   </data>
   <data name="txt_kondisi_barang.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 27</value>
@@ -490,7 +463,7 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_jumlah_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1024, 157</value>
+    <value>999, 157</value>
   </data>
   <data name="txt_jumlah_barang.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 27</value>
@@ -499,7 +472,7 @@
     <value>11</value>
   </data>
   <data name="txt_jumlah_barang.Text" xml:space="preserve">
-    <value>Unit</value>
+    <value>Jumlah</value>
   </data>
   <data name="txt_jumlah_barang.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -540,38 +513,59 @@
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="btn_hapus.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="oldbtn_hapus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="btn_hapus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 25.8000011pt, style=Bold</value>
+  <data name="oldbtn_hapus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="btn_hapus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="oldbtn_hapus.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="btn_hapus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1121, 159</value>
+  <data name="&gt;&gt;oldbtn_hapus.Name" xml:space="preserve">
+    <value>oldbtn_hapus</value>
   </data>
-  <data name="btn_hapus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 48</value>
-  </data>
-  <data name="btn_hapus.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="btn_hapus.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;btn_hapus.Name" xml:space="preserve">
-    <value>btn_hapus</value>
-  </data>
-  <data name="&gt;&gt;btn_hapus.Type" xml:space="preserve">
+  <data name="&gt;&gt;oldbtn_hapus.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_hapus.Parent" xml:space="preserve">
+  <data name="&gt;&gt;oldbtn_hapus.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btn_hapus.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;oldbtn_hapus.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="btn_cari.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_cari.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 18pt, style=Bold</value>
+  </data>
+  <data name="btn_cari.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_cari.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1066, 145</value>
+  </data>
+  <data name="btn_cari.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 40</value>
+  </data>
+  <data name="btn_cari.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btn_cari.Text" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="&gt;&gt;btn_cari.Name" xml:space="preserve">
+    <value>btn_cari</value>
+  </data>
+  <data name="&gt;&gt;btn_cari.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_cari.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_cari.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

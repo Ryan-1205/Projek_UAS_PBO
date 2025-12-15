@@ -30,8 +30,9 @@ namespace Lab_DKV
                 {
                     conn.Open();
 
-                    // ambil id_user juga
+                    // Ambil id_user, username, dan role
                     string query = "SELECT id_user, username, role FROM tbl_user WHERE username=@user AND nis=@nis LIMIT 1";
+
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@user", user);
@@ -39,7 +40,6 @@ namespace Lab_DKV
 
                         using (MySqlDataReader dr = cmd.ExecuteReader())
                         {
-                            // ... (kode koneksi database sebelumnya)
                             if (dr.Read())
                             {
                                 // 1. Ambil data dari database dengan aman
@@ -47,32 +47,26 @@ namespace Lab_DKV
                                 string username = dr["username"]?.ToString() ?? string.Empty;
                                 string role = dr["role"]?.ToString() ?? string.Empty;
 
-                                /* 2. DEBUGGING: Cek apakah ID tertangkap (Boleh dihapus nanti)
-                                if (idUser == 0)
-                                {
-                                    MessageBox.Show("Login berhasil tapi ID User 0. Cek Database tbl_user!");
-                                    return;
-                                }
-                                */
-
-                                // 3. SIMPAN KE SESSION (PENTING)
+                                // 2. SIMPAN KE SESSION (PENTING)
                                 Session.UserId = idUser;
                                 Session.UserName = username;
                                 Session.Role = role;
 
-                                // MessageBox.Show($"Login Berhasil! ID: {idUser}", "Info"); // Debug info
+                                // --- TAMBAHAN: MULAI AUTO LOGOUT (Jika Class SessionWatcher sudah ada) ---
+                                if (Program.InactivityTimer != null)
+                                    Program.InactivityTimer.Start();
+                                // ------------------------------------------------------------------------
 
+                                MessageBox.Show($"Login Berhasil! Selamat datang, {username}.", "Info");
                                 this.Hide();
 
-                                
-                                // 4. Buka form sesuai role
+                                // 3. Buka form sesuai role
                                 if (role.Equals("admin", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    /*
-                                        // Pastikan hlm_admin punya konstruktor yang menerima ID juga
-                                    var adminPage = new hlm_admin(idUser, username);
-                                    adminPage.Show();
-                                    */
+                                    // === PERUBAHAN DI SINI ===
+                                    // Langsung ke hlm_DataUser, tidak pakai hlm_admin lagi
+                                    var frmDataUser = new hlm_DataUser();
+                                    frmDataUser.Show();
                                 }
                                 else // siswa
                                 {
@@ -80,14 +74,17 @@ namespace Lab_DKV
                                     siswaPage.Show();
                                 }
                             }
-                            // ... (sisa kode error handling)
+                            else
+                            {
+                                MessageBox.Show("Username atau NIS salah/tidak ditemukan.", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error Database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,13 +95,21 @@ namespace Lab_DKV
             registerPage.Show();
         }
 
-        // toggle view password
+        // Toggle view password
         bool showingPassword = false;
         private void btnView_Click(object sender, EventArgs e)
         {
             showingPassword = !showingPassword;
+            // Jika showingPassword true, karakter null (kelihatan). Jika false, karakter '*' (tersembunyi)
             txtNis.PasswordChar = showingPassword ? '\0' : '*';
-            btnView.BackgroundImage = showingPassword ? Properties.Resources.view : Properties.Resources.notview;
+
+            // Ganti icon jika ada resources, jika tidak, kode di bawah bisa di-skip atau disesuaikan
+            if (Properties.Resources.view != null && Properties.Resources.notview != null)
+            {
+                btnView.BackgroundImage = showingPassword ? Properties.Resources.view : Properties.Resources.notview;
+            }
+
+            // Kembalikan kursor ke akhir teks
             txtNis.SelectionStart = txtNis.Text.Length;
         }
     }

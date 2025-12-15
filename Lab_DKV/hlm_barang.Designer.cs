@@ -34,16 +34,16 @@
             this.btn_databarang = new System.Windows.Forms.Button();
             this.btn_data_peminjam = new System.Windows.Forms.Button();
             this.btn_keluar = new System.Windows.Forms.Button();
+            this.btn_hapus = new System.Windows.Forms.Button();
             this.btn_tambah = new System.Windows.Forms.Button();
-            this.btn_edit_data = new System.Windows.Forms.Button();
-            this.btn_reload = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.txt_nama_barang = new System.Windows.Forms.TextBox();
             this.txt_merk = new System.Windows.Forms.TextBox();
             this.txt_kondisi_barang = new System.Windows.Forms.TextBox();
             this.txt_jumlah_barang = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_hapus = new System.Windows.Forms.Button();
+            this.oldbtn_hapus = new System.Windows.Forms.Button();
+            this.btn_cari = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,35 +91,25 @@
             this.btn_keluar.UseVisualStyleBackColor = false;
             this.btn_keluar.Click += new System.EventHandler(this.btn_keluar_Click);
             // 
+            // btn_hapus
+            // 
+            this.btn_hapus.BackColor = System.Drawing.Color.Transparent;
+            this.btn_hapus.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_hapus, "btn_hapus");
+            this.btn_hapus.ForeColor = System.Drawing.Color.White;
+            this.btn_hapus.Name = "btn_hapus";
+            this.btn_hapus.UseVisualStyleBackColor = false;
+            this.btn_hapus.Click += new System.EventHandler(this.btn_hapus_Click_1);
+            // 
             // btn_tambah
             // 
             this.btn_tambah.BackColor = System.Drawing.Color.Transparent;
             this.btn_tambah.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_tambah, "btn_tambah");
-            this.btn_tambah.ForeColor = System.Drawing.Color.White;
+            this.btn_tambah.ForeColor = System.Drawing.Color.Transparent;
             this.btn_tambah.Name = "btn_tambah";
             this.btn_tambah.UseVisualStyleBackColor = false;
             this.btn_tambah.Click += new System.EventHandler(this.btn_tambah_Click);
-            // 
-            // btn_edit_data
-            // 
-            this.btn_edit_data.BackColor = System.Drawing.Color.Transparent;
-            this.btn_edit_data.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_edit_data, "btn_edit_data");
-            this.btn_edit_data.ForeColor = System.Drawing.Color.White;
-            this.btn_edit_data.Name = "btn_edit_data";
-            this.btn_edit_data.UseVisualStyleBackColor = false;
-            this.btn_edit_data.Click += new System.EventHandler(this.btn_edit_data_Click);
-            // 
-            // btn_reload
-            // 
-            this.btn_reload.BackColor = System.Drawing.Color.Transparent;
-            this.btn_reload.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_reload, "btn_reload");
-            this.btn_reload.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_reload.Name = "btn_reload";
-            this.btn_reload.UseVisualStyleBackColor = false;
-            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // btn_update
             // 
@@ -161,17 +151,27 @@
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataBarang_CellContentClick);
             // 
-            // btn_hapus
+            // oldbtn_hapus
             // 
-            this.btn_hapus.BackColor = System.Drawing.Color.Transparent;
-            this.btn_hapus.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_hapus, "btn_hapus");
-            this.btn_hapus.ForeColor = System.Drawing.Color.White;
-            this.btn_hapus.Name = "btn_hapus";
-            this.btn_hapus.UseVisualStyleBackColor = false;
-            this.btn_hapus.Click += new System.EventHandler(this.btn_hapus_Click);
+            this.oldbtn_hapus.BackColor = System.Drawing.Color.Transparent;
+            this.oldbtn_hapus.FlatAppearance.BorderSize = 0;
+            this.oldbtn_hapus.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.oldbtn_hapus, "oldbtn_hapus");
+            this.oldbtn_hapus.Name = "oldbtn_hapus";
+            this.oldbtn_hapus.UseVisualStyleBackColor = false;
+            this.oldbtn_hapus.Click += new System.EventHandler(this.btn_hapus_Click);
+            // 
+            // btn_cari
+            // 
+            this.btn_cari.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cari.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_cari, "btn_cari");
+            this.btn_cari.ForeColor = System.Drawing.Color.White;
+            this.btn_cari.Name = "btn_cari";
+            this.btn_cari.UseVisualStyleBackColor = false;
+            this.btn_cari.Click += new System.EventHandler(this.btn_cari_Click);
             // 
             // hlm_barang
             // 
@@ -185,14 +185,14 @@
             this.Controls.Add(this.txt_kode_barang);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_update);
-            this.Controls.Add(this.btn_reload);
-            this.Controls.Add(this.btn_edit_data);
             this.Controls.Add(this.btn_tambah);
+            this.Controls.Add(this.btn_hapus);
+            this.Controls.Add(this.btn_cari);
             this.Controls.Add(this.btn_keluar);
             this.Controls.Add(this.btn_data_peminjam);
             this.Controls.Add(this.btn_databarang);
             this.Controls.Add(this.btn_data_user);
-            this.Controls.Add(this.btn_hapus);
+            this.Controls.Add(this.oldbtn_hapus);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "hlm_barang";
@@ -210,15 +210,15 @@
         private System.Windows.Forms.Button btn_databarang;
         private System.Windows.Forms.Button btn_data_peminjam;
         private System.Windows.Forms.Button btn_keluar;
+        private System.Windows.Forms.Button btn_hapus;
         private System.Windows.Forms.Button btn_tambah;
-        private System.Windows.Forms.Button btn_edit_data;
-        private System.Windows.Forms.Button btn_reload;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.TextBox txt_nama_barang;
         private System.Windows.Forms.TextBox txt_merk;
         private System.Windows.Forms.TextBox txt_kondisi_barang;
         private System.Windows.Forms.TextBox txt_jumlah_barang;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_hapus;
+        private System.Windows.Forms.Button oldbtn_hapus;
+        private System.Windows.Forms.Button btn_cari;
     }
 }
