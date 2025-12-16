@@ -122,17 +122,14 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_kode_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 158</value>
+    <value>465, 165</value>
   </data>
   <data name="txt_kode_barang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 27</value>
+    <value>97, 27</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txt_kode_barang.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="txt_kode_barang.Text" xml:space="preserve">
-    <value>Kode Barang</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txt_kode_barang.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
@@ -160,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_data_user.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 185</value>
+    <value>57, 195</value>
   </data>
   <data name="btn_data_user.Size" type="System.Drawing.Size, System.Drawing">
     <value>261, 52</value>
@@ -190,7 +187,7 @@
     <value>Arial, 15pt, style=Bold</value>
   </data>
   <data name="btn_databarang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 281</value>
+    <value>65, 283</value>
   </data>
   <data name="btn_databarang.Size" type="System.Drawing.Size, System.Drawing">
     <value>255, 49</value>
@@ -220,7 +217,7 @@
     <value>Arial, 15pt, style=Bold</value>
   </data>
   <data name="btn_data_peminjam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 370</value>
+    <value>61, 373</value>
   </data>
   <data name="btn_data_peminjam.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 52</value>
@@ -283,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_hapus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>465, 581</value>
+    <value>444, 577</value>
   </data>
   <data name="btn_hapus.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 33</value>
@@ -316,7 +313,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_tambah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>737, 581</value>
+    <value>731, 577</value>
   </data>
   <data name="btn_tambah.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 33</value>
@@ -346,7 +343,7 @@
     <value>Arial, 10.2pt, style=Bold</value>
   </data>
   <data name="btn_update.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1001, 581</value>
+    <value>1015, 577</value>
   </data>
   <data name="btn_update.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 33</value>
@@ -373,16 +370,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_nama_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 158</value>
+    <value>571, 165</value>
   </data>
   <data name="txt_nama_barang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 27</value>
+    <value>124, 27</value>
   </data>
   <data name="txt_nama_barang.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="txt_nama_barang.Text" xml:space="preserve">
-    <value>Nama Barang</value>
   </data>
   <data name="txt_nama_barang.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -403,16 +397,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_merk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>741, 157</value>
+    <value>704, 165</value>
   </data>
   <data name="txt_merk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 27</value>
+    <value>71, 27</value>
   </data>
   <data name="txt_merk.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="txt_merk.Text" xml:space="preserve">
-    <value>Merk</value>
   </data>
   <data name="txt_merk.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -433,16 +424,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_kondisi_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>854, 157</value>
+    <value>783, 165</value>
   </data>
   <data name="txt_kondisi_barang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 27</value>
+    <value>137, 27</value>
   </data>
   <data name="txt_kondisi_barang.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
-  </data>
-  <data name="txt_kondisi_barang.Text" xml:space="preserve">
-    <value>Kondisi Barang</value>
   </data>
   <data name="txt_kondisi_barang.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -463,16 +451,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_jumlah_barang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>999, 157</value>
+    <value>924, 164</value>
   </data>
   <data name="txt_jumlah_barang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 27</value>
+    <value>121, 27</value>
   </data>
   <data name="txt_jumlah_barang.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="txt_jumlah_barang.Text" xml:space="preserve">
-    <value>Jumlah</value>
   </data>
   <data name="txt_jumlah_barang.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -517,13 +502,13 @@
     <value>Flat</value>
   </data>
   <data name="btn_cari.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 18pt, style=Bold</value>
+    <value>Arial, 13.8pt, style=Bold</value>
   </data>
   <data name="btn_cari.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btn_cari.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1066, 145</value>
+    <value>1078, 152</value>
   </data>
   <data name="btn_cari.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 40</value>

@@ -256,7 +256,7 @@
     <value>Arial, 10.8pt, style=Bold</value>
   </data>
   <data name="btn_Hapus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 583</value>
+    <value>434, 578</value>
   </data>
   <data name="btn_Hapus.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 31</value>
@@ -283,13 +283,13 @@
     <value>Flat</value>
   </data>
   <data name="btn_cari.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 22.2pt, style=Bold</value>
+    <value>Arial, 16.2pt, style=Bold</value>
   </data>
   <data name="btn_cari.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1068, 141</value>
+    <value>1077, 150</value>
   </data>
   <data name="btn_cari.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 54</value>
+    <value>97, 44</value>
   </data>
   <data name="btn_cari.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -319,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_Tambah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>726, 583</value>
+    <value>721, 581</value>
   </data>
   <data name="btn_Tambah.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 28</value>
@@ -370,16 +370,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>452, 157</value>
+    <value>469, 163</value>
   </data>
   <data name="txt_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 27</value>
+    <value>145, 27</value>
   </data>
   <data name="txt_username.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
-  </data>
-  <data name="txt_username.Text" xml:space="preserve">
-    <value>Username</value>
   </data>
   <data name="&gt;&gt;txt_username.Name" xml:space="preserve">
     <value>txt_username</value>
@@ -397,16 +394,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_nis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 156</value>
+    <value>630, 163</value>
   </data>
   <data name="txt_nis.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 27</value>
   </data>
   <data name="txt_nis.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
-  </data>
-  <data name="txt_nis.Text" xml:space="preserve">
-    <value>NIS</value>
   </data>
   <data name="&gt;&gt;txt_nis.Name" xml:space="preserve">
     <value>txt_nis</value>
@@ -424,16 +418,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_role.Location" type="System.Drawing.Point, System.Drawing">
-    <value>900, 156</value>
+    <value>913, 163</value>
   </data>
   <data name="txt_role.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 27</value>
+    <value>127, 27</value>
   </data>
   <data name="txt_role.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
-  </data>
-  <data name="txt_role.Text" xml:space="preserve">
-    <value>Role</value>
   </data>
   <data name="&gt;&gt;txt_role.Name" xml:space="preserve">
     <value>txt_role</value>
@@ -451,16 +442,13 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_angkatan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>746, 156</value>
+    <value>770, 164</value>
   </data>
   <data name="txt_angkatan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 27</value>
+    <value>130, 27</value>
   </data>
   <data name="txt_angkatan.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="txt_angkatan.Text" xml:space="preserve">
-    <value>Angkatan</value>
   </data>
   <data name="&gt;&gt;txt_angkatan.Name" xml:space="preserve">
     <value>txt_angkatan</value>
@@ -484,7 +472,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_Update.Location" type="System.Drawing.Point, System.Drawing">
-    <value>994, 581</value>
+    <value>1010, 580</value>
   </data>
   <data name="btn_Update.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 30</value>

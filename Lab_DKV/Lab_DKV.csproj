@@ -256,5 +256,14 @@
   <ItemGroup>
     <None Include="Resources\hlm_peminjaman.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 25-100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 26-100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 27-100.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

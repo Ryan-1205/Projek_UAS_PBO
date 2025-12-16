@@ -166,7 +166,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Lab_DKV.Properties.Resources.Asset_20_100;
+            this.BackgroundImage = global::Lab_DKV.Properties.Resources.Asset_26_100;
             this.Controls.Add(this.txt_jumlah_barang);
             this.Controls.Add(this.txt_kondisi_barang);
             this.Controls.Add(this.txt_merk);

@@ -126,7 +126,7 @@
     <value>Arial, 15pt, style=Bold</value>
   </data>
   <data name="btn_DataUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 185</value>
+    <value>56, 194</value>
   </data>
   <data name="btn_DataUser.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 54</value>
@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_DataBarang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 267</value>
+    <value>60, 284</value>
   </data>
   <data name="btn_DataBarang.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 54</value>
@@ -193,7 +193,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_DataPeminjam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 354</value>
+    <value>60, 370</value>
   </data>
   <data name="btn_DataPeminjam.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 54</value>
@@ -259,7 +259,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_hapus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 586</value>
+    <value>446, 580</value>
   </data>
   <data name="btn_hapus.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 30</value>
@@ -292,7 +292,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_reload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>742, 583</value>
+    <value>1021, 576</value>
   </data>
   <data name="btn_reload.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 38</value>
@@ -319,13 +319,13 @@
     <value>Flat</value>
   </data>
   <data name="btn_cari.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 18pt, style=Bold</value>
+    <value>Arial, 13.8pt, style=Bold</value>
   </data>
   <data name="btn_cari.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btn_cari.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1067, 151</value>
+    <value>1077, 148</value>
   </data>
   <data name="btn_cari.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 45</value>
@@ -376,10 +376,10 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_no_pb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 157</value>
+    <value>466, 162</value>
   </data>
   <data name="txt_no_pb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 27</value>
+    <value>100, 27</value>
   </data>
   <data name="txt_no_pb.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -403,10 +403,10 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_tgl_pinjam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>549, 157</value>
+    <value>572, 162</value>
   </data>
   <data name="txt_tgl_pinjam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 27</value>
+    <value>124, 27</value>
   </data>
   <data name="txt_tgl_pinjam.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -430,10 +430,10 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_nama_petugaspeminjam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>785, 157</value>
+    <value>784, 163</value>
   </data>
   <data name="txt_nama_petugaspeminjam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 27</value>
+    <value>135, 27</value>
   </data>
   <data name="txt_nama_petugaspeminjam.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -457,10 +457,10 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_id_user.Location" type="System.Drawing.Point, System.Drawing">
-    <value>688, 157</value>
+    <value>703, 164</value>
   </data>
   <data name="txt_id_user.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 27</value>
+    <value>73, 27</value>
   </data>
   <data name="txt_id_user.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -484,10 +484,10 @@
     <value>Arial, 10.2pt</value>
   </data>
   <data name="txt_tujuan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>922, 157</value>
+    <value>925, 163</value>
   </data>
   <data name="txt_tujuan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 27</value>
+    <value>119, 27</value>
   </data>
   <data name="txt_tujuan.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
