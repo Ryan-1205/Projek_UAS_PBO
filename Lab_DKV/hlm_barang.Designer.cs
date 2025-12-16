@@ -42,7 +42,6 @@
             this.txt_kondisi_barang = new System.Windows.Forms.TextBox();
             this.txt_jumlah_barang = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.oldbtn_hapus = new System.Windows.Forms.Button();
             this.btn_cari = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -153,16 +152,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataBarang_CellContentClick);
             // 
-            // oldbtn_hapus
-            // 
-            this.oldbtn_hapus.BackColor = System.Drawing.Color.Transparent;
-            this.oldbtn_hapus.FlatAppearance.BorderSize = 0;
-            this.oldbtn_hapus.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.oldbtn_hapus, "oldbtn_hapus");
-            this.oldbtn_hapus.Name = "oldbtn_hapus";
-            this.oldbtn_hapus.UseVisualStyleBackColor = false;
-            this.oldbtn_hapus.Click += new System.EventHandler(this.btn_hapus_Click);
-            // 
             // btn_cari
             // 
             this.btn_cari.BackColor = System.Drawing.Color.Transparent;
@@ -192,7 +181,6 @@
             this.Controls.Add(this.btn_data_peminjam);
             this.Controls.Add(this.btn_databarang);
             this.Controls.Add(this.btn_data_user);
-            this.Controls.Add(this.oldbtn_hapus);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "hlm_barang";
@@ -218,7 +206,6 @@
         private System.Windows.Forms.TextBox txt_kondisi_barang;
         private System.Windows.Forms.TextBox txt_jumlah_barang;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button oldbtn_hapus;
         private System.Windows.Forms.Button btn_cari;
     }
 }

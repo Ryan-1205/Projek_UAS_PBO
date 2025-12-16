@@ -513,27 +513,6 @@
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="oldbtn_hapus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="oldbtn_hapus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="oldbtn_hapus.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;oldbtn_hapus.Name" xml:space="preserve">
-    <value>oldbtn_hapus</value>
-  </data>
-  <data name="&gt;&gt;oldbtn_hapus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;oldbtn_hapus.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;oldbtn_hapus.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
   <data name="btn_cari.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
