@@ -9,21 +9,14 @@ namespace Lab_DKV
 {
     public partial class hlm_pengembalian : Form
     {
-        // =================================================================
-        // 1. PROPERTI USER
-        // =================================================================
         private int _currentUserId;
         private string _currentUserName;
 
-        // =================================================================
-        // 2. CONSTRUCTOR
-        // =================================================================
         public hlm_pengembalian()
         {
             InitializeComponent();
         }
 
-        // Konstruktor utama yang dipanggil dari hlm_siswa
         public hlm_pengembalian(int userId, string userName) : this()
         {
             SetCurrentUser(userId, userName);
@@ -35,13 +28,8 @@ namespace Lab_DKV
             _currentUserName = userName;
         }
 
-        // =================================================================
-        // 3. EVENT HANDLER UTAMA
-        // =================================================================
-
         private void hlm_pengembalian_Load(object sender, EventArgs e)
         {
-            // Validasi User
             if (_currentUserId <= 0)
             {
                 if (Session.UserId > 0)
@@ -56,8 +44,6 @@ namespace Lab_DKV
                     return;
                 }
             }
-
-            // Load Data
             getData();
         }
 
@@ -66,10 +52,6 @@ namespace Lab_DKV
             getData();
         }
 
-        // =================================================================
-        // 4. FUNGSI UTILITY & BUSINESS LOGIC
-        // =================================================================
-
         private void getData()
         {
             using (MySqlConnection conn = DB.GetConnection())
@@ -77,7 +59,6 @@ namespace Lab_DKV
                 try
                 {
                     conn.Open();
-                    // Query: Ambil detail barang yang dipinjam user ini & BELUM kembali
                     string query = @"
                         SELECT 
                             D.id_detailpb, 
@@ -90,8 +71,7 @@ namespace Lab_DKV
                         FROM tbl_detailpb D
                         INNER JOIN tbl_peminjaman P ON D.id_peminjaman = P.id_peminjaman
                         INNER JOIN tbl_barang B ON D.id_barang = B.id_barang
-                        WHERE P.id_user = @uid AND (D.status_kembali IS NULL OR D.status_kembali = 0); 
-                    ";
+                        WHERE P.id_user = @uid AND (D.status_kembali IS NULL OR D.status_kembali = 0)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@uid", _currentUserId);
@@ -102,7 +82,6 @@ namespace Lab_DKV
 
                     dataGridView1.DataSource = dt;
 
-                    // Tambahkan kolom CheckBox jika belum ada
                     if (dataGridView1.Columns["chkBox"] == null)
                     {
                         DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
@@ -111,11 +90,8 @@ namespace Lab_DKV
                         dataGridView1.Columns.Insert(0, chk);
                     }
 
-                    // Sembunyikan ID
                     if (dataGridView1.Columns.Contains("id_detailpb")) dataGridView1.Columns["id_detailpb"].Visible = false;
                     if (dataGridView1.Columns.Contains("id_peminjaman")) dataGridView1.Columns["id_peminjaman"].Visible = false;
-
-                    // Atur Lebar Kolom
                     if (dataGridView1.Columns.Contains("nama_barang")) dataGridView1.Columns["nama_barang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
                 catch (Exception ex)
@@ -124,10 +100,6 @@ namespace Lab_DKV
                 }
             }
         }
-
-        // =================================================================
-        // 5. BUTTON CLICKS
-        // =================================================================
 
         private void Bt_Pilih_Semua_Click(object sender, EventArgs e)
         {
@@ -142,8 +114,7 @@ namespace Lab_DKV
                 }
             }
 
-            if (checkedCount == dataGridView1.Rows.Count)
-                checkStatus = false;
+            if (checkedCount == dataGridView1.Rows.Count) checkStatus = false;
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -247,10 +218,29 @@ namespace Lab_DKV
                         }
 
                         trans.Commit();
-                        MessageBox.Show($"Berhasil mengembalikan {suksesCount} barang.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        getData();
-                        NamaPenerima.Clear();
+                        // --- MODIFIKASI: POPUP KONFIRMASI KELUAR ---
+                        DialogResult result = MessageBox.Show(
+                            $"Berhasil mengembalikan {suksesCount} barang.\n\nApakah Anda ingin keluar dari aplikasi dan kembali ke Login?",
+                            "Pengembalian Sukses",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                        );
+
+                        if (result == DialogResult.Yes)
+                        {
+                            // Logout & ke Login
+                            Session.Clear(); // Bersihkan sesi (jika ada class Session)
+                            hlm_login loginPage = new hlm_login();
+                            loginPage.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            // Tetap di halaman ini, refresh data
+                            getData();
+                            NamaPenerima.Clear();
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -261,17 +251,10 @@ namespace Lab_DKV
             }
         }
 
-        // =================================================================
-        // PERBAIKAN TOMBOL KEMBALI
-        // =================================================================
         private void BtnKembali_Click(object sender, EventArgs e)
         {
-           
-            // 1. Buka kembali halaman siswa dengan membawa ID user yang sedang login
             hlm_siswa frmSiswa = new hlm_siswa(_currentUserId, _currentUserName);
             frmSiswa.Show();
-
-            // 2. Tutup halaman pengembalian ini
             this.Close();
         }
 
