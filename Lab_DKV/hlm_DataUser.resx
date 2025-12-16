@@ -553,7 +553,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>halamanAdmin</value>
+    <value>halaman Admin</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>hlm_DataUser</value>

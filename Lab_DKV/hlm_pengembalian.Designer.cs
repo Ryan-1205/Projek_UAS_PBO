@@ -142,7 +142,7 @@
             this.MinimizeBox = false;
             this.Name = "hlm_pengembalian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pengembalian ";
+            this.Text = "Halaman Pengembalian ";
             this.Load += new System.EventHandler(this.hlm_pengembalian_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
