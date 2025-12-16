@@ -30,17 +30,36 @@ namespace Lab_DKV
                 using (MySqlConnection conn = DB.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT * FROM tbl_peminjaman";
-
+                    //p adalah tbl_peminjaman, u untuk tbl_user dan user_name untuk kolom u.useername
+                    string query = @"
+                            SELECT
+                                p.no_pb, 
+                                p.tgl_pinjam,
+                                u.username AS user_name, -- Mengambil nama user dari tbl_user
+                                p.nama_petugaspeminjam,
+                                p.tujuan,
+                                p.id_user  -- Tetap sertakan id_user untuk keperluan Edit/Update (opsional, tapi disarankan)
+                             FROM
+                                  tbl_peminjaman p
+                            LEFT JOIN
+                                 tbl_user u ON p.id_user = u.id_user";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
                     {
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         dataGridView1.DataSource = dt;
+
+                        if (dataGridView1.Columns.Contains("user_name"))
+                        {
+                            dataGridView1.Columns["user_name"].HeaderText = "Nama User"; // Ubah header kolom
+                        }
+                        if (dataGridView1.Columns.Contains("id_user"))
+                        {
+                            dataGridView1.Columns["id_user"].Visible = false; // Sembunyikan kolom id_user
+                        }
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -85,7 +104,7 @@ namespace Lab_DKV
 
                 txt_no_pb.Text = row.Cells["no_pb"].Value.ToString();
                 txt_tgl_pinjam.Text = row.Cells["tgl_pinjam"].Value.ToString();
-                txt_id_user.Text = row.Cells["id_user"].Value.ToString();
+                txt_id_user.Text = row.Cells["user_name"].Value.ToString();
                 txt_nama_petugaspeminjam.Text = row.Cells["nama_petugaspeminjam"].Value.ToString();
                 txt_tujuan.Text = row.Cells["tujuan"].Value.ToString();
 

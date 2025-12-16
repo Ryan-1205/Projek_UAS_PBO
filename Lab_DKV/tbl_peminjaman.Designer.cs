@@ -70,6 +70,7 @@
             this.btn_DataPeminjam.BackColor = System.Drawing.Color.Transparent;
             this.btn_DataPeminjam.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_DataPeminjam, "btn_DataPeminjam");
+            this.btn_DataPeminjam.ForeColor = System.Drawing.Color.White;
             this.btn_DataPeminjam.Name = "btn_DataPeminjam";
             this.btn_DataPeminjam.UseVisualStyleBackColor = false;
             this.btn_DataPeminjam.Click += new System.EventHandler(this.btn_DataPeminjam_Click);
