@@ -129,12 +129,6 @@
     <Compile Include="hlm_peminjaman.Designer.cs">
       <DependentUpon>hlm_peminjaman.cs</DependentUpon>
     </Compile>
-    <Compile Include="hlm_admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="hlm_admin.Designer.cs">
-      <DependentUpon>hlm_admin.cs</DependentUpon>
-    </Compile>
     <Compile Include="hlm_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,9 +171,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="hlm_peminjaman.resx">
       <DependentUpon>hlm_peminjaman.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hlm_admin.resx">
-      <DependentUpon>hlm_admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hlm_login.resx">
       <DependentUpon>hlm_login.cs</DependentUpon>

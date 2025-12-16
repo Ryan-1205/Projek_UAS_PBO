@@ -20,15 +20,18 @@ namespace Lab_DKV
 
             // Event Double Click untuk melihat siapa yang meminjam barang ini
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+            // Event Click biasa untuk mengisi Textbox
+            dataGridView1.CellClick += DataGridView1_CellClick;
         }
 
         private void hlm_barang_Load(object sender, EventArgs e)
         {
             LoadDataBarang();
+            ClearInput();
         }
 
         // ==========================================
-        // 1. FUNGSI LOAD DATA (VERSI OPSI A: STOK FISIK)
+        // 1. FUNGSI LOAD DATA (VERSI STOK FISIK)
         // ==========================================
         public void LoadDataBarang()
         {
@@ -38,11 +41,10 @@ namespace Lab_DKV
                 {
                     conn.Open();
 
-                    // Query disederhanakan agar tidak terjadi Double Counting.
-                    // 'jumlah_barang' di database sekarang dianggap sebagai 'Stok Tersedia di Rak'.
+                    // Query mengambil data fisik di database
                     string query = @"
                         SELECT 
-                            id_barang,        -- Hidden ID untuk referensi
+                            id_barang,        -- Hidden ID
                             kode_barang, 
                             nama_barang, 
                             merek, 
@@ -58,11 +60,11 @@ namespace Lab_DKV
                         da.Fill(dtBarang);
                         dataGridView1.DataSource = dtBarang;
 
-                        // Sembunyikan ID Barang agar tampilan bersih
+                        // Sembunyikan ID Barang
                         if (dataGridView1.Columns["id_barang"] != null)
                             dataGridView1.Columns["id_barang"].Visible = false;
 
-                        // Rapikan lebar kolom
+                        // Rapikan lebar kolom Nama Barang
                         if (dataGridView1.Columns["nama_barang"] != null)
                             dataGridView1.Columns["nama_barang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     }
@@ -81,7 +83,6 @@ namespace Lab_DKV
         {
             if (e.RowIndex >= 0)
             {
-                // Ambil ID Barang dari baris yang diklik
                 int idBarang = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_barang"].Value);
                 string namaBarang = dataGridView1.Rows[e.RowIndex].Cells["nama_barang"].Value.ToString();
 
@@ -91,7 +92,6 @@ namespace Lab_DKV
 
         private void ShowDetailPeminjam(int idBarang, string namaBarang)
         {
-            // Buat Popup Form secara coding (on-the-fly)
             Form frmDetail = new Form();
             frmDetail.Text = $"Siapa yang meminjam '{namaBarang}'?";
             frmDetail.Size = new Size(600, 300);
@@ -107,7 +107,7 @@ namespace Lab_DKV
                 using (MySqlConnection conn = DB.GetConnection())
                 {
                     conn.Open();
-                    // Cari di tabel detail & peminjaman siapa yang belum mengembalikan (status_kembali = 0)
+                    // Query cek peminjam yang belum mengembalikan (status_kembali = 0)
                     string query = @"
                         SELECT 
                             P.no_pb AS 'No. Pinjam',
@@ -175,7 +175,9 @@ namespace Lab_DKV
                         cmd.Parameters.AddWithValue("@nama", txt_nama_barang.Text);
                         cmd.Parameters.AddWithValue("@merek", txt_merk.Text);
                         cmd.Parameters.AddWithValue("@kondisi", txt_kondisi_barang.Text);
-                        cmd.Parameters.AddWithValue("@jumlah_barang", txt_jumlah_barang.Text);
+                        // Default 0 jika input jumlah error/kosong
+                        int jml = int.TryParse(txt_jumlah_barang.Text, out int j) ? j : 0;
+                        cmd.Parameters.AddWithValue("@jumlah_barang", jml);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -188,7 +190,7 @@ namespace Lab_DKV
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            if (txt_kode_barang.Text == "") { MessageBox.Show("Pilih data dulu!"); return; }
+            if (string.IsNullOrWhiteSpace(txt_kode_barang.Text)) { MessageBox.Show("Pilih data dulu!"); return; }
 
             try
             {
@@ -208,7 +210,8 @@ namespace Lab_DKV
                         cmd.Parameters.AddWithValue("@nama", txt_nama_barang.Text);
                         cmd.Parameters.AddWithValue("@merek", txt_merk.Text);
                         cmd.Parameters.AddWithValue("@kondisi", txt_kondisi_barang.Text);
-                        cmd.Parameters.AddWithValue("@jumlah_barang", txt_jumlah_barang.Text);
+                        int jml = int.TryParse(txt_jumlah_barang.Text, out int j) ? j : 0;
+                        cmd.Parameters.AddWithValue("@jumlah_barang", jml);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -219,7 +222,7 @@ namespace Lab_DKV
             catch (Exception ex) { MessageBox.Show("ERROR: " + ex.Message); }
         }
 
-        // FUNGSI KURANGI STOK (HAPUS)
+        // TOMBOL HAPUS = KURANGI STOK
         private void btn_hapus_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_kode_barang.Text))
@@ -228,21 +231,21 @@ namespace Lab_DKV
                 return;
             }
 
-            // Validasi Input Jumlah (Berapa yang mau dikurangi?)
+            // Validasi Input Jumlah
             if (!int.TryParse(txt_jumlah_barang.Text, out int jumlahKurang) || jumlahKurang <= 0)
             {
-                MessageBox.Show("Masukkan jumlah stok yang ingin dikurangi pada kolom Jumlah Barang.");
+                MessageBox.Show("Masukkan jumlah stok yang ingin dikurangi pada kolom Jumlah Barang (angka positif).");
                 return;
             }
 
-            if (MessageBox.Show($"Kurangi stok '{txt_nama_barang.Text}' sebanyak {jumlahKurang} unit?", "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show($"Kurangi stok '{txt_nama_barang.Text}' sebanyak {jumlahKurang} unit?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
                 {
                     using (MySqlConnection conn = DB.GetConnection())
                     {
                         conn.Open();
-                        // 1. Cek stok dulu
+                        // 1. Cek stok saat ini
                         string checkSql = "SELECT jumlah_barang FROM tbl_barang WHERE kode_barang=@kode";
                         int stokSekarang = 0;
                         using (MySqlCommand cmdCheck = new MySqlCommand(checkSql, conn))
@@ -258,7 +261,7 @@ namespace Lab_DKV
                             return;
                         }
 
-                        // 2. Update DB
+                        // 2. Update (Kurangi)
                         string updateSql = "UPDATE tbl_barang SET jumlah_barang = jumlah_barang - @kurang WHERE kode_barang=@kode";
                         using (MySqlCommand cmd = new MySqlCommand(updateSql, conn))
                         {
@@ -276,19 +279,30 @@ namespace Lab_DKV
         }
 
         // ==========================================
-        // 4. NAVIGASI & UTILS
+        // 4. UTILS & NAVIGATION
         // ==========================================
 
         private void btn_cari_Click(object sender, EventArgs e)
         {
             string keyword = txt_nama_barang.Text.Trim();
-            if (string.IsNullOrEmpty(keyword)) dtBarang.DefaultView.RowFilter = "";
-            else dtBarang.DefaultView.RowFilter = string.Format("nama_barang LIKE '%{0}%' OR kode_barang LIKE '%{0}%' OR merek LIKE '%{0}%'", keyword);
+            if (string.IsNullOrEmpty(keyword))
+            {
+                dtBarang.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                dtBarang.DefaultView.RowFilter = string.Format("nama_barang LIKE '%{0}%' OR kode_barang LIKE '%{0}%' OR merek LIKE '%{0}%'", keyword);
+            }
         }
 
-        private void btn_reload_Click(object sender, EventArgs e) { LoadDataBarang(); ClearInput(); }
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            LoadDataBarang();
+            ClearInput();
+        }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        // Event Klik Grid untuk mengisi Textbox
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -304,19 +318,42 @@ namespace Lab_DKV
 
         private void ClearInput()
         {
-            txt_kode_barang.Clear(); txt_nama_barang.Clear(); txt_merk.Clear();
-            txt_kondisi_barang.Clear(); txt_jumlah_barang.Clear();
+            txt_kode_barang.Clear();
+            txt_nama_barang.Clear();
+            txt_merk.Clear();
+            txt_kondisi_barang.Clear();
+            txt_jumlah_barang.Clear();
         }
 
-        private void btn_data_user_Click(object sender, EventArgs e) { hlm_DataUser p = new hlm_DataUser(); p.Show(); this.Hide(); }
-        private void btn_data_peminjam_Click(object sender, EventArgs e) { tbl_peminjaman p = new tbl_peminjaman(); p.Show(); this.Hide(); }
-        private void btn_keluar_Click(object sender, EventArgs e) { hlm_login p = new hlm_login(); p.Show(); this.Close(); }
+        // --- Navigasi ---
+        private void btn_data_user_Click(object sender, EventArgs e)
+        {
+            hlm_DataUser p = new hlm_DataUser();
+            p.Show();
+            this.Hide();
+        }
 
-        // Mappings
+        private void btn_data_peminjam_Click(object sender, EventArgs e)
+        {
+            tbl_peminjaman p = new tbl_peminjaman();
+            p.Show();
+            this.Hide();
+        }
+
+        private void btn_keluar_Click(object sender, EventArgs e)
+        {
+            hlm_login p = new hlm_login();
+            p.Show();
+            this.Close();
+        }
+
+        // --- Mappings & Placeholders ---
+        // Menghubungkan event handler lama/ganda ke fungsi yang benar
         private void btn_hapus_Click_1(object sender, EventArgs e) => btn_hapus_Click(sender, e);
-        private void DataBarang_CellContentClick(object sender, DataGridViewCellEventArgs e) => dataGridView1_CellClick(sender, e);
+        private void DataBarang_CellContentClick(object sender, DataGridViewCellEventArgs e) => DataGridView1_CellClick(sender, e);
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) => DataGridView1_CellClick(sender, e); // Redundant check
 
-        // Placeholders
+        // Placeholder kosong (aman dihapus jika tidak dipakai di Designer)
         private void btn_databarangClick(object sender, EventArgs e) { }
         private void hlm_barang_Load_1(object sender, EventArgs e) { }
         private void txt_kode_barang_TextChanged(object sender, EventArgs e) { }
